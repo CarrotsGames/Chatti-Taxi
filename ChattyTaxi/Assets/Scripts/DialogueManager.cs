@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour {
 
     public float TipAmount;
-    public float Tip;
     public GameObject TextBox;
     public GameObject[] Events;
     private int EventSteps = 0;
@@ -17,9 +16,10 @@ public class DialogueManager : MonoBehaviour {
     public string[] CustomerDialogueComedy;
     int Progress;
     public Text TestText;
-
+    private StoreScript Store;
     private void Start()
     {
+        Store = GetComponent<StoreScript>();
         EventScript = GetComponent<Events>();
     }
     public void Dialogue(int ButtonsPress)
@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour {
 
                 if (EventScript.NegativeChange)
                 {
-                    Tip += 0;
+                    Store.Tip += 0;
                     //   CustomerBox.GetComponentInChildren<Text>().text = 
                     // Changes Customers text to a negative responce at this array
                     // Progress is added by 3 to continue through the list
@@ -40,7 +40,7 @@ public class DialogueManager : MonoBehaviour {
                 }
                 else if (EventScript.ComedicChange)
                 {
-                    Tip += 0;
+                    Store.Tip += 0;
                     //   CustomerBox.GetComponentInChildren<Text>().text = 
                     // Changes Customers text to a negative responce at this array
                     // Progress is added by 3 to continue through the list
@@ -50,7 +50,7 @@ public class DialogueManager : MonoBehaviour {
                 {
                     // Changes customers text to a nutural response at this array
                     // Progress is added by 3 to continue through the list
-                    Tip += TipAmount;
+                    Store.Tip += TipAmount;
                     TestText.text = CustomerDialogue[0 + Progress];
 
                 }
@@ -60,7 +60,7 @@ public class DialogueManager : MonoBehaviour {
 
                 if (EventScript.NegativeChange)
                 {
-                    Tip += 0;
+                    Store.Tip += 0;
                     // Changes Customers text to a negative responce at this array
                     // Progress is added by 3 to continue through the list
                     TestText.text = CustomerDialogueNegative[1 + Progress];
@@ -68,7 +68,7 @@ public class DialogueManager : MonoBehaviour {
                 }
                 else if (EventScript.ComedicChange)
                 {
-                    Tip += 0;
+                    Store.Tip += 0;
                     //   CustomerBox.GetComponentInChildren<Text>().text = 
                     // Changes Customers text to a negative responce at this array
                     // Progress is added by 3 to continue through the list
@@ -77,7 +77,7 @@ public class DialogueManager : MonoBehaviour {
                 else
                 {  // Changes customers text to a nutural response at this array
                     // Progress is added by 3 to continue through the list
-                    Tip += TipAmount / 2;               
+                    Store.Tip += TipAmount / 2;               
                     TestText.text = CustomerDialogue[1 + Progress];
 
                 }
@@ -87,23 +87,23 @@ public class DialogueManager : MonoBehaviour {
                 {
                     // Changes Customers text to a negative responce at this array
                     // Progress is added by 3 to continue through the list
-                    Tip += TipAmount / TipAmount - 2;
+                    Store.Tip += TipAmount / TipAmount - 2;
                     TestText.text = CustomerDialogueNegative[2 + Progress];
 
                 }
                 else if (EventScript.ComedicChange)
                 {
-                    Tip += 0;
+                    Store.Tip += 0;
                     //   CustomerBox.GetComponentInChildren<Text>().text = 
                     // Changes Customers text to a negative responce at this array
                     // Progress is added by 3 to continue through the list
                     TestText.text = CustomerDialogueComedy[0 + Progress];
                 }
                 else
-                {   
+                {
                     // Changes customers text to a nutural response at this array
                     // Progress is added by 3 to continue through the list
-                    Tip += TipAmount / TipAmount;
+                    Store.Tip += TipAmount / TipAmount;
                     TestText.text = CustomerDialogue[2 + Progress];
 
                 }
