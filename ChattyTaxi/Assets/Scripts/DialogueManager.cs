@@ -32,11 +32,15 @@ public class DialogueManager : MonoBehaviour {
                 if (EventScript.NegativeChange)
                 {
                     Tip += 0;
-                 //   CustomerBox.GetComponentInChildren<Text>().text = 
+                    //   CustomerBox.GetComponentInChildren<Text>().text = 
+                    // Changes Customers text to a negative responce at this array
+                    // Progress is added by 3 to continue through the list
                     TestText.text = CustomerDialogueNegative[0 + Progress];
                 }
                 else
                 {
+                    // Changes customers text to a nutural response at this array
+                    // Progress is added by 3 to continue through the list
                     Tip += TipAmount;
                     TestText.text = CustomerDialogue[0 + Progress];
 
@@ -48,12 +52,15 @@ public class DialogueManager : MonoBehaviour {
                 if (EventScript.NegativeChange)
                 {
                     Tip += 0;
+                    // Changes Customers text to a negative responce at this array
+                    // Progress is added by 3 to continue through the list
                     TestText.text = CustomerDialogueNegative[1 + Progress];
 
                 }
                 else
-                {
-                    Tip += TipAmount / 2;
+                {  // Changes customers text to a nutural response at this array
+                    // Progress is added by 3 to continue through the list
+                    Tip += TipAmount / 2;               
                     TestText.text = CustomerDialogue[1 + Progress];
 
                 }
@@ -61,12 +68,16 @@ public class DialogueManager : MonoBehaviour {
             case 3:
                 if (EventScript.NegativeChange)
                 {
+                    // Changes Customers text to a negative responce at this array
+                    // Progress is added by 3 to continue through the list
                     Tip += TipAmount / TipAmount - 2;
                     TestText.text = CustomerDialogueNegative[2 + Progress];
 
                 }
                 else
-                {
+                {   
+                    // Changes customers text to a nutural response at this array
+                    // Progress is added by 3 to continue through the list
                     Tip += TipAmount / TipAmount;
                     TestText.text = CustomerDialogue[2 + Progress];
 
@@ -79,6 +90,7 @@ public class DialogueManager : MonoBehaviour {
         EventSteps += 1;
         Events[EventSteps].SetActive(true);
         Val += 1;
+        // Adds by 3 to continue the array
         Progress += 3;
 
     }
