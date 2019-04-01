@@ -66,7 +66,7 @@ public class Events : MonoBehaviour {
                     one.GetComponentInChildren<Text>().text = NormalDialogue[0];
                     two.GetComponentInChildren<Text>().text = NormalDialogue[1];
                     three.GetComponentInChildren<Text>().text = NormalDialogue[2];
-                   
+          
                 }
                 break;
             case 1:
