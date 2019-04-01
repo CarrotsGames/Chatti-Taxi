@@ -42,17 +42,37 @@ public class Dialogue : MonoBehaviour
                 {
                     Debug.Log("GET TIP CUSTOMER LEAVES");
                 }
+                else if (Neutral)
+                {
+                    Debug.Log("GET TIP CUSTOMER LEAVES");
+
+                }
+                else if (Bad)
+                {
+                    Debug.Log("GET TIP CUSTOMER LEAVES");
+
+                }
                 else
                 {
                     Text1.text = GoodResponse[0];
                     Text2.text = GoodResponse[1];
                     Text3.text = GoodResponse[2];
                     CustomerText.text = CustomerResponse[0];
-                     Good = true;
+                    Good = true;
                 }
                 break;
             case 2:
                 if (Neutral)
+                {
+                    Debug.Log("GET TIP CUSTOMER LEAVES");
+
+                }
+                else if(Good)
+                {
+                    Debug.Log("GET TIP CUSTOMER LEAVES");
+
+                }
+                else if (Bad)
                 {
                     Debug.Log("GET TIP CUSTOMER LEAVES");
 
@@ -69,6 +89,16 @@ public class Dialogue : MonoBehaviour
 
             case 3:
                 if (Bad)
+                {
+                    Debug.Log("GET TIP CUSTOMER LEAVES");
+
+                }
+                else if (Good)
+                {
+                    Debug.Log("GET TIP CUSTOMER LEAVES");
+
+                }
+                else if (Neutral)
                 {
                     Debug.Log("GET TIP CUSTOMER LEAVES");
 
