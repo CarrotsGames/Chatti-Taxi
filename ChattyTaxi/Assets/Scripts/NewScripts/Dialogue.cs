@@ -19,7 +19,9 @@ public class Dialogue : MonoBehaviour
     public string[] GoodResponse;
     public string[] BadResponse;
     public string[] CustomerResponse;
- 
+
+    private GameObject ConvoManagerGameObj;
+    ConvoManager ConvoManagerScript;
 
     private bool Good;
     private bool Bad;
@@ -27,7 +29,8 @@ public class Dialogue : MonoBehaviour
      // Use this for initialization
     void Start()
     {
-
+        ConvoManagerGameObj = GameObject.FindGameObjectWithTag("ConvoManager");
+           ConvoManagerScript = ConvoManagerGameObj.GetComponent<ConvoManager>();
     }
 
  
@@ -41,15 +44,18 @@ public class Dialogue : MonoBehaviour
                 if (Good)
                 {
                     Debug.Log("GET TIP CUSTOMER LEAVES");
+                    ConvoManagerScript.Events();
                 }
                 else if (Neutral)
                 {
                     Debug.Log("GET TIP CUSTOMER LEAVES");
+                    ConvoManagerScript.Events();
 
                 }
                 else if (Bad)
                 {
                     Debug.Log("GET TIP CUSTOMER LEAVES");
+                    ConvoManagerScript.Events();
 
                 }
                 else
@@ -65,16 +71,19 @@ public class Dialogue : MonoBehaviour
                 if (Neutral)
                 {
                     Debug.Log("GET TIP CUSTOMER LEAVES");
+                    ConvoManagerScript.Events();
 
                 }
                 else if(Good)
                 {
                     Debug.Log("GET TIP CUSTOMER LEAVES");
+                    ConvoManagerScript.Events();
 
                 }
                 else if (Bad)
                 {
                     Debug.Log("GET TIP CUSTOMER LEAVES");
+                    ConvoManagerScript.Events();
 
                 }
                 else
@@ -91,16 +100,19 @@ public class Dialogue : MonoBehaviour
                 if (Bad)
                 {
                     Debug.Log("GET TIP CUSTOMER LEAVES");
+                    ConvoManagerScript.Events();
 
                 }
                 else if (Good)
                 {
                     Debug.Log("GET TIP CUSTOMER LEAVES");
+                    ConvoManagerScript.Events();
 
                 }
                 else if (Neutral)
                 {
                     Debug.Log("GET TIP CUSTOMER LEAVES");
+                    ConvoManagerScript.Events();
 
                 }
                 else
