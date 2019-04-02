@@ -123,8 +123,15 @@ public class Dialogue : MonoBehaviour
          }
         else if (Bad)
         {
-            Currency.Tip += BadTips[0];
+            if (ComedyBook)
+            {
+                Currency.Tip += ComedyTips[0];
 
+            }
+            else
+            {
+                Currency.Tip += BadTips[0];
+            }
             myState = States.Bad;
          }
         else if(Neutral)
@@ -245,9 +252,16 @@ public class Dialogue : MonoBehaviour
             (
             delegate {
                 ConvoManagerScript.Events();
-                Currency.Tip += BadTips[3];
+                if (ComedyBook)
+                {
+                    Currency.Tip += ComedyTips[1];
+                }
+                else
+                {
+                    Currency.Tip += BadTips[1];
+                }
 
-             });
+            });
         NeutralButton.GetComponent<Button>().onClick.RemoveAllListeners();
 
         // Second button
@@ -255,17 +269,30 @@ public class Dialogue : MonoBehaviour
             delegate
             {
                 ConvoManagerScript.Events();
-                Currency.Tip += BadTips[3];
+                if (ComedyBook)
+                {
+                    Currency.Tip += ComedyTips[2];
+                }
+                else
+                {
+                    Currency.Tip += BadTips[2];
+                }
 
-             });
+            });
         BadButton.GetComponent<Button>().onClick.RemoveAllListeners();
 
         // Third button
         BadButton.onClick.AddListener(delegate
         {
             ConvoManagerScript.Events();
-            Currency.Tip += BadTips[3];
-
+            if (ComedyBook)
+            {
+                Currency.Tip += ComedyTips[3];
+            }
+            else
+            {
+                Currency.Tip += BadTips[3];
+            }
          });
         
     }
