@@ -410,9 +410,22 @@ MonoBehaviour:
   Text2: {fileID: 2741129}
   Text3: {fileID: 803733783}
   CustomerText: {fileID: 1368993470}
-  GoodTips: []
-  BadTips: []
-  NeutralTips: []
+  GoodTips:
+  - 0
+  - 0
+  - 0
+  - 0
+  BadTips:
+  - 0
+  - 0
+  - 0
+  - 0
+  NeutralTips:
+  - 0
+  - 0
+  - 0
+  - 0
+  ComedyTips: []
   GoodButton: {fileID: 1864800209}
   NeutralButton: {fileID: 1594238511}
   BadButton: {fileID: 582114582}
@@ -424,6 +437,7 @@ MonoBehaviour:
   - Good response
   - Good Response 1
   - Good Response 2
+  ComedyRespond: []
   BadResponse:
   - LMAAAAAAAO
   - i didnt mean it like that
@@ -432,6 +446,7 @@ MonoBehaviour:
   - yeah i just dont know what to do
   - I dont even want to think about that
   - Who do you think you are you heartless bastard
+  ComedyBook: 0
 --- !u!1 &109210055
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,9 +935,22 @@ MonoBehaviour:
   Text2: {fileID: 1229966012}
   Text3: {fileID: 11060472}
   CustomerText: {fileID: 1117169382}
-  GoodTips: []
-  BadTips: []
-  NeutralTips: []
+  GoodTips:
+  - 0
+  - 0
+  - 0
+  - 0
+  BadTips:
+  - 0
+  - 0
+  - 0
+  - 0
+  NeutralTips:
+  - 0
+  - 0
+  - 0
+  - 0
+  ComedyTips: []
   GoodButton: {fileID: 252063962}
   NeutralButton: {fileID: 1325179270}
   BadButton: {fileID: 513492488}
@@ -934,6 +962,7 @@ MonoBehaviour:
   - i mean he does take skill
   - 'Thats great to hear '
   - '...'
+  ComedyRespond: []
   BadResponse:
   - Get that little mac garbage outta here
   - 'Little out of the taxi now buddy '
@@ -942,6 +971,7 @@ MonoBehaviour:
   - 'Yeah im the best smash player of all time '
   - 'i love little mac '
   - '*customer gets thrown out through window*'
+  ComedyBook: 0
 --- !u!1 &513492486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2480,6 +2510,11 @@ MonoBehaviour:
   - 2
   - 2
   - 3
+  ComedyTips:
+  - 0
+  - 0
+  - 0
+  - 0
   GoodButton: {fileID: 1386113667}
   NeutralButton: {fileID: 597712862}
   BadButton: {fileID: 780526360}
@@ -2491,6 +2526,10 @@ MonoBehaviour:
   - No problem bro
   - Ive been there man
   - I dont even have a switch
+  ComedyRespond:
+  - HAHAHAH
+  - COMEDY
+  - GET IT
   BadResponse:
   - Ha gud shit
   - im not the dumbass who lost his switch
@@ -2499,6 +2538,7 @@ MonoBehaviour:
   - How nice of you
   - How meh of you
   - flat out fuck off
+  ComedyBook: 0
 --- !u!1 &1212435094
 GameObject:
   m_ObjectHideFlags: 0
@@ -2777,6 +2817,7 @@ MonoBehaviour:
   - {fileID: 98141968}
   - {fileID: 407177908}
   - {fileID: 2018084661}
+  NumOfEvents: 0
 --- !u!1 &1325179269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2946,6 +2987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tip: 0
+  ResetTip: 0
 --- !u!1 &1368993468
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,9 +4061,22 @@ MonoBehaviour:
   Text2: {fileID: 1254020002}
   Text3: {fileID: 1142775269}
   CustomerText: {fileID: 55713934}
-  GoodTips: []
-  BadTips: []
-  NeutralTips: []
+  GoodTips:
+  - 0
+  - 0
+  - 0
+  - 0
+  BadTips:
+  - 0
+  - 0
+  - 0
+  - 0
+  NeutralTips:
+  - 0
+  - 0
+  - 0
+  - 0
+  ComedyTips: []
   GoodButton: {fileID: 1692563612}
   NeutralButton: {fileID: 632543639}
   BadButton: {fileID: 938985894}
@@ -4033,6 +4088,7 @@ MonoBehaviour:
   - You are legit the best person who has ever sat in this taxi
   - You are legit the best person who has ever sat in this taxi
   - You are legit the best person who has ever sat in this taxi
+  ComedyRespond: []
   BadResponse:
   - You are legit the best person who has ever sat in this taxi
   - You are legit the best person who has ever sat in this taxi
@@ -4041,3 +4097,4 @@ MonoBehaviour:
   - yeah i know
   - yeah i know
   - yeah i know
+  ComedyBook: 0

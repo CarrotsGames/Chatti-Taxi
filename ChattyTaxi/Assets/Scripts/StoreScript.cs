@@ -5,14 +5,25 @@ using UnityEngine;
 public class StoreScript : MonoBehaviour {
 
     public float Tip;
+    public bool ResetTip;
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        Tip = PlayerPrefs.GetFloat("TipAmount"); 
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        PlayerPrefs.SetFloat("TipAmount", Tip);
+        if (ResetTip)
+        {
+            Tip = 0;
+            PlayerPrefs.SetFloat("TipAmount", Tip);
+
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("TipAmount", Tip);
+        }
 	}
 }

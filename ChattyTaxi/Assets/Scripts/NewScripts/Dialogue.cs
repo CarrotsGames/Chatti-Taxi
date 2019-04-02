@@ -19,6 +19,7 @@ public class Dialogue : MonoBehaviour
     public float[] GoodTips;
     public float[] BadTips;
     public float[] NeutralTips;
+    public float[] ComedyTips;
 
 
 
@@ -28,6 +29,8 @@ public class Dialogue : MonoBehaviour
 
     public string[] NeuturalResponse;
     public string[] GoodResponse;
+    public string[] ComedyRespond;
+
     public string[] BadResponse;
     public string[] CustomerResponse;
 
@@ -38,6 +41,9 @@ public class Dialogue : MonoBehaviour
     private bool Good;
     private bool Bad;
     private bool Neutral;
+    public bool ComedyBook;
+
+    int ComedyChange;
      // Use this for initialization
     void Start()
     {
@@ -75,14 +81,22 @@ public class Dialogue : MonoBehaviour
                     ConvoManagerScript.Events();
 
                 }
+                else if (ComedyBook && ComedyChange > 0)
+                {
+                    Debug.Log("GET TIP CUSTOMER LEAVES");
+                    ConvoManagerScript.Events();
+                    Store.Tip += ComedyTips[1];
+                }
                 else
                 {
-                    Store.Tip += GoodTips[0];
-                    Text1.text = GoodResponse[0];
-                    Text2.text = GoodResponse[1];
-                    Text3.text = GoodResponse[2];
-                    CustomerText.text = CustomerResponse[0];
-                    Good = true;
+                   
+                     Store.Tip += GoodTips[0];
+                     Text1.text = GoodResponse[0];
+                     Text2.text = GoodResponse[1];
+                     Text3.text = GoodResponse[2];
+                     CustomerText.text = CustomerResponse[0];
+                     Good = true;
+                     
                 }
                 break;
             case 2:
@@ -107,15 +121,23 @@ public class Dialogue : MonoBehaviour
                     Store.Tip += BadTips[2];
 
                 }
+                else if (ComedyBook && ComedyChange > 0)
+                {
+                    Debug.Log("GET TIP CUSTOMER LEAVES");
+                    ConvoManagerScript.Events();
+                    Store.Tip += ComedyTips[2];
+                }
                 else
                 {
-                    Store.Tip += NeutralTips[0];
+                   
+                        Store.Tip += NeutralTips[0];
 
-                    Text1.text = NeuturalResponse[0];
-                    Text2.text = NeuturalResponse[1];
-                    Text3.text = NeuturalResponse[2];
-                    CustomerText.text = CustomerResponse[1];
-                    Neutral = true;
+                        Text1.text = NeuturalResponse[0];
+                        Text2.text = NeuturalResponse[1];
+                        Text3.text = NeuturalResponse[2];
+                        CustomerText.text = CustomerResponse[1];
+                        Neutral = true;
+                     
                 }
                 break;
 
@@ -141,15 +163,35 @@ public class Dialogue : MonoBehaviour
                     Store.Tip += NeutralTips[3];
 
                 }
+                else if (ComedyBook && ComedyChange > 0)
+                {
+                    Debug.Log("GET TIP CUSTOMER LEAVES");
+                    ConvoManagerScript.Events();
+                    Store.Tip += ComedyTips[3];
+                }
                 else
                 {
-                    Store.Tip += BadTips[0];
+                    if (ComedyBook)
+                    {
+                        ComedyChange += 1;
+                        Store.Tip += BadTips[0];
 
-                    Text1.text = BadResponse[0];
-                    Text2.text = BadResponse[1];
-                    Text3.text = BadResponse[2];
-                    CustomerText.text = CustomerResponse[2];
-                    Bad = true;
+                        Text1.text = ComedyRespond[0];
+                        Text2.text = ComedyRespond[1];
+                        Text3.text = ComedyRespond[2];
+                        CustomerText.text = CustomerResponse[2];
+                        ComedyBook = true;
+                    }
+                    else
+                    {
+                        Store.Tip += BadTips[0];
+
+                        Text1.text = BadResponse[0];
+                        Text2.text = BadResponse[1];
+                        Text3.text = BadResponse[2];
+                        CustomerText.text = CustomerResponse[2];
+                        Bad = true;
+                    }
                 }
                 break;
 
