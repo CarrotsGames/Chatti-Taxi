@@ -35,6 +35,7 @@ public class Dialogue : MonoBehaviour
     
     // Responses from the customer
     public string[] CustomerResponse;
+    public string[] CustomerComedyResponse;
 
     // Changes the bad responses to comedic responses
     public bool ComedyBook;
@@ -103,6 +104,10 @@ public class Dialogue : MonoBehaviour
         {
 
             BadVoid();
+        }
+        if(ComedyBook)
+        {
+            Text3.text = ComedyRespond[0];
         }
     }
     // Checks for a response to the initial question
@@ -214,11 +219,25 @@ public class Dialogue : MonoBehaviour
     // handles bad Responses
     void BadVoid()
     {
-        // Changes the text to the Bad responses 
-        Text1.text = BadResponse[0];
-        Text2.text = BadResponse[1];
-        Text3.text = BadResponse[2];
-        CustomerText.text = CustomerResponse[2];
+        if(ComedyBook)
+        {
+            // Changes the text to the Bad responses 
+            Text1.text = ComedyRespond[1];
+            Text2.text = ComedyRespond[2];
+            Text3.text = ComedyRespond[3];
+            CustomerText.text = CustomerComedyResponse[0];
+        }
+        else
+        {
+            // Changes the text to the Bad responses 
+            Text1.text = BadResponse[0];
+            Text2.text = BadResponse[1];
+            Text3.text = BadResponse[2];
+            CustomerText.text = CustomerResponse[2];
+
+        }
+
+
         GoodButton.GetComponent<Button>().onClick.RemoveAllListeners();
 
         // first button

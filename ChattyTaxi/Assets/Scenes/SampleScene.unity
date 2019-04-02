@@ -355,7 +355,11 @@ MonoBehaviour:
   - There is plenty of fish in the sea
   - 'You just need to push on '
   - You should give me her number
-  ComedyRespond: []
+  ComedyRespond:
+  - HeyComedy
+  - Comedy1
+  - Comedy2
+  - Comedy3
   BadResponse:
   - Im just saying
   - i didnt mean it like that
@@ -364,7 +368,9 @@ MonoBehaviour:
   - yeah i just dont know what to do
   - I dont even want to think about that
   - Who do you think you are you heartless bastard
-  ComedyBook: 0
+  CustomerComedyResponse:
+  - HA Good comedy
+  ComedyBook: 1
   Good: 0
 --- !u!1 &109210055
 GameObject:
@@ -802,7 +808,11 @@ MonoBehaviour:
   - Yeah man go for it!
   - I guess
   - Dont stuff it up
-  ComedyRespond: []
+  ComedyRespond:
+  - HeyComedy
+  - Comedy1
+  - Comedy2
+  - Comedy3
   BadResponse:
   - Look your even crying. What i little bitch
   - i just being honest
@@ -811,6 +821,8 @@ MonoBehaviour:
   - Yeah!? you think so?
   - Why are you asking?
   - '*Starts crying* you''re so mean!'
+  CustomerComedyResponse:
+  - HA Good comedy
   ComedyBook: 0
   Good: 0
 --- !u!1 &513492486
@@ -2747,7 +2759,11 @@ MonoBehaviour:
   - No problem bro
   - 'My dog ate my switch '
   - I dont even have a switch
-  ComedyRespond: []
+  ComedyRespond:
+  - Comedy1
+  - Comedy2
+  - Comedy3
+  - Comedy4
   BadResponse:
   - Ha gud shit
   - im not the dumbass who lost his switch
@@ -2756,6 +2772,8 @@ MonoBehaviour:
   - How nice of you
   - How meh of you
   - flat out fuck off
+  CustomerComedyResponse:
+  - HA Good comedy
   ComedyBook: 0
   Good: 0
 --- !u!1 &1212435094
@@ -4282,7 +4300,11 @@ MonoBehaviour:
   - don't worry you can do this!
   - it's up to you
   - '...'
-  ComedyRespond: []
+  ComedyRespond:
+  - HeyComedy
+  - Comedy1
+  - Comedy2
+  - Comedy3
   BadResponse:
   - 'I''m just a taix driver man '
   - 'i''m your son '
@@ -4291,5 +4313,7 @@ MonoBehaviour:
   - I'm not sure if i should, im scared
   - whats that?
   - '...My son threatens me'
-  ComedyBook: 0
+  CustomerComedyResponse:
+  - HA Good comedy
+  ComedyBook: 1
   Good: 0
