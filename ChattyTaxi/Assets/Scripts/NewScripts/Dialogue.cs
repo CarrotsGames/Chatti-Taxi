@@ -16,187 +16,239 @@ public class Dialogue : MonoBehaviour
     // 1,2,3 are the tip you get for each response
     // EG reponse 1 gives you 50C while repsonse 2 gives 10C  
 
+    // tips amount  for each decision 
     public float[] GoodTips;
     public float[] BadTips;
     public float[] NeutralTips;
     public float[] ComedyTips;
 
-
-
+    // Interactive buttons
     public Button GoodButton;
     public Button NeutralButton;
     public Button BadButton;
-
+    
+    // Responses from the player
     public string[] NeuturalResponse;
     public string[] GoodResponse;
     public string[] ComedyRespond;
-
     public string[] BadResponse;
+    
+    // Responses from the customer
     public string[] CustomerResponse;
 
-    private GameObject ConvoManagerGameObj;
-    private GameObject StoreGameObj;
-    private StoreScript Store;
-    private ConvoManager ConvoManagerScript;
-    private bool Good;
-    private bool Bad;
-    private bool Neutral;
+    // Changes the bad responses to comedic responses
     public bool ComedyBook;
 
-    int ComedyChange;
-     // Use this for initialization
+    // refrences the conversationManager
+    private GameObject ConvoManagerGameObj;
+    private ConvoManager ConvoManagerScript;
+
+    // refrences the store
+    private GameObject CurrencyGameObj;
+    private CurrencyScript Currency;
+   
+    // checks which decision is being made
+    public bool Good;
+    private bool Bad;
+    private bool Neutral;
+  
+    // holds states of the conversation
+     private enum States
+    {
+        Question,
+        Good,
+        Neutral,
+        Bad,
+        Stop
+    }
+    private States myState;
+
+      // Use this for initialization
     void Start()
     {
-        ConvoManagerGameObj = GameObject.FindGameObjectWithTag("ConvoManager");
+        myState = States.Question;
+        Good = false;
+        Bad = false;
+         ConvoManagerGameObj = GameObject.FindGameObjectWithTag("ConvoManager");
         ConvoManagerScript = ConvoManagerGameObj.GetComponent<ConvoManager>();
-        StoreGameObj = GameObject.FindGameObjectWithTag("Store");
-        Store = StoreGameObj.GetComponent<StoreScript>();
+        CurrencyGameObj = GameObject.FindGameObjectWithTag("Currency");
+        Currency = CurrencyGameObj.GetComponent<CurrencyScript>();
     }
 
- 
-    public void DialogueManager(int ButtonsPress)
+    // Changes the buttons focus to the desired voids
+    private void OnEnable()
     {
-        //   Button CustomerBox = Events[Val].transform.GetChild(3).GetComponentInChildren<Button>();
-
-        switch (ButtonsPress)
+         GoodButton.onClick.AddListener(delegate { Good = true; });
+        NeutralButton.onClick.AddListener(delegate { Neutral = true; });
+        BadButton.onClick.AddListener(delegate { Bad = true; });
+    }
+    private void Update()
+    {
+        // Changes the states when called
+        if (myState == States.Question)
         {
-            case 1:
-                if (Good)
-                {
-                    Store.Tip += GoodTips[1];
-                    Debug.Log("GET TIP CUSTOMER LEAVES");
-                    ConvoManagerScript.Events();
-                }
-                else if (Neutral)
-                {
-                    Store.Tip += NeutralTips[1];
-                    Debug.Log("GET TIP CUSTOMER LEAVES");
-                    ConvoManagerScript.Events();
+            Question();
+        }
+        else if (myState == States.Good)
+        {
 
-                }
-                else if (Bad)
-                {
-                    Store.Tip += BadTips[1];
-                    Debug.Log("GET TIP CUSTOMER LEAVES");
-                    ConvoManagerScript.Events();
+            GoodVoid();
+        }
+        else if (myState == States.Neutral)
+        {
 
-                }
-                else if (ComedyBook && ComedyChange > 0)
-                {
-                    Debug.Log("GET TIP CUSTOMER LEAVES");
-                    ConvoManagerScript.Events();
-                    Store.Tip += ComedyTips[1];
-                }
-                else
-                {
-                   
-                     Store.Tip += GoodTips[0];
-                     Text1.text = GoodResponse[0];
-                     Text2.text = GoodResponse[1];
-                     Text3.text = GoodResponse[2];
-                     CustomerText.text = CustomerResponse[0];
-                     Good = true;
-                     
-                }
-                break;
-            case 2:
-                if (Neutral)
-                {
-                    Debug.Log("GET TIP CUSTOMER LEAVES");
-                    ConvoManagerScript.Events();
-                    Store.Tip += NeutralTips[2];
+            NeutralVoid();
+        }
+        else if(myState == States.Bad)
+        {
 
-                }
-                else if(Good)
-                {
-                    Debug.Log("GET TIP CUSTOMER LEAVES");
-                    ConvoManagerScript.Events();
-                    Store.Tip += GoodTips[2];
-
-                }
-                else if (Bad)
-                {
-                    Debug.Log("GET TIP CUSTOMER LEAVES");
-                    ConvoManagerScript.Events();
-                    Store.Tip += BadTips[2];
-
-                }
-                else if (ComedyBook && ComedyChange > 0)
-                {
-                    Debug.Log("GET TIP CUSTOMER LEAVES");
-                    ConvoManagerScript.Events();
-                    Store.Tip += ComedyTips[2];
-                }
-                else
-                {
-                   
-                        Store.Tip += NeutralTips[0];
-
-                        Text1.text = NeuturalResponse[0];
-                        Text2.text = NeuturalResponse[1];
-                        Text3.text = NeuturalResponse[2];
-                        CustomerText.text = CustomerResponse[1];
-                        Neutral = true;
-                     
-                }
-                break;
-
-            case 3:
-                if (Bad)
-                {
-                    Debug.Log("GET TIP CUSTOMER LEAVES");
-                    ConvoManagerScript.Events();
-                    Store.Tip += BadTips[3];
-
-                }
-                else if (Good)
-                {
-                    Debug.Log("GET TIP CUSTOMER LEAVES");
-                    ConvoManagerScript.Events();
-                    Store.Tip += GoodTips[3];
-
-                }
-                else if (Neutral)
-                {
-                    Debug.Log("GET TIP CUSTOMER LEAVES");
-                    ConvoManagerScript.Events();
-                    Store.Tip += NeutralTips[3];
-
-                }
-                else if (ComedyBook && ComedyChange > 0)
-                {
-                    Debug.Log("GET TIP CUSTOMER LEAVES");
-                    ConvoManagerScript.Events();
-                    Store.Tip += ComedyTips[3];
-                }
-                else
-                {
-                    if (ComedyBook)
-                    {
-                        ComedyChange += 1;
-                        Store.Tip += BadTips[0];
-
-                        Text1.text = ComedyRespond[0];
-                        Text2.text = ComedyRespond[1];
-                        Text3.text = ComedyRespond[2];
-                        CustomerText.text = CustomerResponse[2];
-                        ComedyBook = true;
-                    }
-                    else
-                    {
-                        Store.Tip += BadTips[0];
-
-                        Text1.text = BadResponse[0];
-                        Text2.text = BadResponse[1];
-                        Text3.text = BadResponse[2];
-                        CustomerText.text = CustomerResponse[2];
-                        Bad = true;
-                    }
-                }
-                break;
-
-
+            BadVoid();
         }
     }
+    // Checks for a response to the initial question
+    void Question()
+    {
+        //CustomerText.text = CustomerResponse[0];
+        // chooses what to change the state to
+        if(Good)
+        {
+            Currency.Tip += GoodTips[0];
+
+            myState = States.Good;
+         }
+        else if (Bad)
+        {
+            Currency.Tip += BadTips[0];
+
+            myState = States.Bad;
+         }
+        else if(Neutral)
+        {
+            Currency.Tip += NeutralTips[0];
+
+            myState = States.Neutral;
+         }
+
+    }
+
+    // handles good Responses
+    void GoodVoid()
+    {
+        // Changes the text to the Good responses 
+        Text1.text = GoodResponse[0];
+        Text2.text = GoodResponse[1];
+        Text3.text = GoodResponse[2];
+        CustomerText.text = CustomerResponse[0];
+        GoodButton.GetComponent<Button>().onClick.RemoveAllListeners();
+    
+        // First button
+        GoodButton.onClick.AddListener
+            (
+            delegate {
+                ConvoManagerScript.Events();
+                Currency.Tip += GoodTips[1];
+
+             });
+        NeutralButton.GetComponent<Button>().onClick.RemoveAllListeners();
+    
+        // Second button
+        NeutralButton.onClick.AddListener(
+            delegate
+            {
+                ConvoManagerScript.Events();
+                Currency.Tip += GoodTips[2];
+
+             });
+        BadButton.GetComponent<Button>().onClick.RemoveAllListeners();
+
+        // Third button
+        BadButton.onClick.AddListener(delegate
+        {
+            ConvoManagerScript.Events();
+            Currency.Tip += GoodTips[3];
+
+         });
+     
+    }
   
+    // handles neutral Responses
+    void NeutralVoid()
+    {
+        // Changes the text to the Neutral responses 
+        Text1.text = NeuturalResponse[0];
+        Text2.text = NeuturalResponse[1];
+        Text3.text = NeuturalResponse[2];
+        CustomerText.text = CustomerResponse[1];
+        GoodButton.GetComponent<Button>().onClick.RemoveAllListeners();
+     
+        // First button
+        GoodButton.onClick.AddListener
+            (
+            delegate {
+                ConvoManagerScript.Events();
+                Currency.Tip += NeutralTips[1];
+
+             });
+        NeutralButton.GetComponent<Button>().onClick.RemoveAllListeners();
+
+        // Second button
+        NeutralButton.onClick.AddListener(
+            delegate
+            {
+                ConvoManagerScript.Events();
+                Currency.Tip += NeutralTips[2];
+
+             });
+        BadButton.GetComponent<Button>().onClick.RemoveAllListeners();
+
+        // third button
+        BadButton.onClick.AddListener(delegate
+        {
+            ConvoManagerScript.Events();
+            Currency.Tip += NeutralTips[3];
+
+         });
+      
+    }    
+    
+    // handles bad Responses
+    void BadVoid()
+    {
+        // Changes the text to the Bad responses 
+        Text1.text = BadResponse[0];
+        Text2.text = BadResponse[1];
+        Text3.text = BadResponse[2];
+        CustomerText.text = CustomerResponse[2];
+        GoodButton.GetComponent<Button>().onClick.RemoveAllListeners();
+
+        // first button
+        GoodButton.onClick.AddListener
+            (
+            delegate {
+                ConvoManagerScript.Events();
+                Currency.Tip += BadTips[3];
+
+             });
+        NeutralButton.GetComponent<Button>().onClick.RemoveAllListeners();
+
+        // Second button
+        NeutralButton.onClick.AddListener(
+            delegate
+            {
+                ConvoManagerScript.Events();
+                Currency.Tip += BadTips[3];
+
+             });
+        BadButton.GetComponent<Button>().onClick.RemoveAllListeners();
+
+        // Third button
+        BadButton.onClick.AddListener(delegate
+        {
+            ConvoManagerScript.Events();
+            Currency.Tip += BadTips[3];
+
+         });
+        
+    }
+
 }

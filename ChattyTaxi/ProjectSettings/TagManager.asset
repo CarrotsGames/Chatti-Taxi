@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ConvoManager
   - Store
+  - Currency
   layers:
   - Default
   - TransparentFX

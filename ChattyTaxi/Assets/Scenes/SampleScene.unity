@@ -365,6 +365,7 @@ MonoBehaviour:
   - I dont even want to think about that
   - Who do you think you are you heartless bastard
   ComedyBook: 0
+  Good: 0
 --- !u!1 &109210055
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,6 +812,7 @@ MonoBehaviour:
   - Why are you asking?
   - '*Starts crying* you''re so mean!'
   ComedyBook: 0
+  Good: 0
 --- !u!1 &513492486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2755,6 +2757,7 @@ MonoBehaviour:
   - How meh of you
   - flat out fuck off
   ComedyBook: 0
+  Good: 0
 --- !u!1 &1212435094
 GameObject:
   m_ObjectHideFlags: 0
@@ -3296,8 +3299,8 @@ GameObject:
   - component: {fileID: 1360888651}
   - component: {fileID: 1360888652}
   m_Layer: 0
-  m_Name: Store
-  m_TagString: Store
+  m_Name: Currency
+  m_TagString: Currency
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4289,3 +4292,4 @@ MonoBehaviour:
   - whats that?
   - '...My son threatens me'
   ComedyBook: 0
+  Good: 0

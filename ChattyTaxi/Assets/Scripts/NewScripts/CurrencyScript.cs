@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoreScript : MonoBehaviour {
+public class CurrencyScript : MonoBehaviour {
 
     public float Tip;
     public bool ResetTip;
@@ -15,15 +15,13 @@ public class StoreScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+ 
         if (ResetTip)
         {
             Tip = 0;
             PlayerPrefs.SetFloat("TipAmount", Tip);
 
         }
-        else
-        {
-            PlayerPrefs.SetFloat("TipAmount", Tip);
-        }
+      
 	}
 }

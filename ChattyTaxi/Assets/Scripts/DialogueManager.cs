@@ -16,10 +16,10 @@ public class DialogueManager : MonoBehaviour {
     public string[] CustomerDialogueComedy;
     int Progress;
     public Text TestText;
-    private StoreScript Store;
+    private CurrencyScript Store;
     private void Start()
     {
-        Store = GetComponent<StoreScript>();
+        Store = GetComponent<CurrencyScript>();
         EventScript = GetComponent<Events>();
     }
     public void Dialogue(int ButtonsPress)
