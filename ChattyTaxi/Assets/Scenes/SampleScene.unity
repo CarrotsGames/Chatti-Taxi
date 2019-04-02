@@ -343,6 +343,7 @@ MonoBehaviour:
   - 1
   - 0
   - 2
+  ComedyTips: []
   GoodButton: {fileID: 1864800209}
   NeutralButton: {fileID: 1594238511}
   BadButton: {fileID: 582114582}
@@ -354,6 +355,7 @@ MonoBehaviour:
   - There is plenty of fish in the sea
   - 'You just need to push on '
   - You should give me her number
+  ComedyRespond: []
   BadResponse:
   - Im just saying
   - i didnt mean it like that
@@ -362,6 +364,7 @@ MonoBehaviour:
   - yeah i just dont know what to do
   - I dont even want to think about that
   - Who do you think you are you heartless bastard
+  ComedyBook: 0
 --- !u!1 &109210055
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,6 +789,7 @@ MonoBehaviour:
   - 0
   - 3
   - 0
+  ComedyTips: []
   GoodButton: {fileID: 252063962}
   NeutralButton: {fileID: 1325179270}
   BadButton: {fileID: 513492488}
@@ -797,6 +801,7 @@ MonoBehaviour:
   - Yeah man go for it!
   - I guess
   - Dont stuff it up
+  ComedyRespond: []
   BadResponse:
   - Look your even crying. What i little bitch
   - i just being honest
@@ -805,6 +810,7 @@ MonoBehaviour:
   - Yeah!? you think so?
   - Why are you asking?
   - '*Starts crying* you''re so mean!'
+  ComedyBook: 0
 --- !u!1 &513492486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2695,7 +2701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1204284743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2727,6 +2733,7 @@ MonoBehaviour:
   - 2
   - 2
   - 3
+  ComedyTips: []
   GoodButton: {fileID: 1386113667}
   NeutralButton: {fileID: 597712862}
   BadButton: {fileID: 780526360}
@@ -2738,6 +2745,7 @@ MonoBehaviour:
   - No problem bro
   - 'My dog ate my switch '
   - I dont even have a switch
+  ComedyRespond: []
   BadResponse:
   - Ha gud shit
   - im not the dumbass who lost his switch
@@ -2746,6 +2754,7 @@ MonoBehaviour:
   - How nice of you
   - How meh of you
   - flat out fuck off
+  ComedyBook: 0
 --- !u!1 &1212435094
 GameObject:
   m_ObjectHideFlags: 0
@@ -3020,6 +3029,7 @@ MonoBehaviour:
   - {fileID: 98141968}
   - {fileID: 407177908}
   - {fileID: 2018084661}
+  NumOfEvents: 0
 --- !u!1 &1323101433
 GameObject:
   m_ObjectHideFlags: 0
@@ -3317,6 +3327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tip: 0
+  ResetTip: 0
 --- !u!1 &1386113665
 GameObject:
   m_ObjectHideFlags: 0
@@ -4204,7 +4215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2018084662
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4256,6 +4267,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  ComedyTips: []
   GoodButton: {fileID: 1692563612}
   NeutralButton: {fileID: 632543639}
   BadButton: {fileID: 938985894}
@@ -4267,6 +4279,7 @@ MonoBehaviour:
   - don't worry you can do this!
   - it's up to you
   - '...'
+  ComedyRespond: []
   BadResponse:
   - 'I''m just a taix driver man '
   - 'i''m your son '
@@ -4275,3 +4288,4 @@ MonoBehaviour:
   - I'm not sure if i should, im scared
   - whats that?
   - '...My son threatens me'
+  ComedyBook: 0
