@@ -24,4 +24,11 @@ public class CurrencyScript : MonoBehaviour {
         }
       
 	}
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("Comedy", 0);
+        Tip = 0;
+        PlayerPrefs.SetFloat("TipAmount", Tip);
+    }
 }

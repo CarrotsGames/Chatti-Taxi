@@ -343,7 +343,11 @@ MonoBehaviour:
   - 1
   - 0
   - 2
-  ComedyTips: []
+  ComedyTips:
+  - 0
+  - 0
+  - 0
+  - 0
   GoodButton: {fileID: 1864800209}
   NeutralButton: {fileID: 1594238511}
   BadButton: {fileID: 582114582}
@@ -370,7 +374,7 @@ MonoBehaviour:
   - Who do you think you are you heartless bastard
   CustomerComedyResponse:
   - HA Good comedy
-  ComedyBook: 1
+  ComedyBook: 0
   Good: 0
 --- !u!1 &109210055
 GameObject:
@@ -796,7 +800,11 @@ MonoBehaviour:
   - 0
   - 3
   - 0
-  ComedyTips: []
+  ComedyTips:
+  - 0
+  - 0
+  - 0
+  - 0
   GoodButton: {fileID: 252063962}
   NeutralButton: {fileID: 1325179270}
   BadButton: {fileID: 513492488}
@@ -2747,7 +2755,11 @@ MonoBehaviour:
   - 2
   - 2
   - 3
-  ComedyTips: []
+  ComedyTips:
+  - 0
+  - 0
+  - 0
+  - 0
   GoodButton: {fileID: 1386113667}
   NeutralButton: {fileID: 597712862}
   BadButton: {fileID: 780526360}
@@ -4288,7 +4300,11 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  ComedyTips: []
+  ComedyTips:
+  - 0
+  - 0
+  - 0
+  - 0
   GoodButton: {fileID: 1692563612}
   NeutralButton: {fileID: 632543639}
   BadButton: {fileID: 938985894}
@@ -4315,5 +4331,5 @@ MonoBehaviour:
   - '...My son threatens me'
   CustomerComedyResponse:
   - HA Good comedy
-  ComedyBook: 1
+  ComedyBook: 0
   Good: 0
