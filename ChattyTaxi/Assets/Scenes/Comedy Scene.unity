@@ -442,7 +442,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'ok
+  m_Text: 'Good i hate icecream
 
 
 
@@ -1563,7 +1563,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lmao
+  m_Text: 'Did you eat it still?
 
 
 
@@ -2756,26 +2756,23 @@ MonoBehaviour:
   - 'im a very meh individual '
   - Is there anything else i can even say at this point
   GoodResponse:
-  - No problem bro
-  - 'My dog ate my switch '
-  - I dont even have a switch
+  - they didn't even give you a new one
+  - '$5? thats not much '
+  - 'bro give me $5 and ill get you an cream '
   ComedyRespond:
-  - 
+  - Comedy1
   - Comedy2
   - Comedy3
   - Comedy4
   BadResponse:
-  - Ha gud shit
-  - im not the dumbass who lost his switch
-  - 'dont make me drive off the interstate '
+  - 'because you can drop it '
+  - because i dont like sugar
+  - 
   CustomerResponse:
-  - How nice of you
-  - How meh of you
+  - yeah now i just wasted $5
+  - what why?
   - flat out fuck off
   CustomerComedyResponse:
-  - HA Good comedy
-  - HA Good comedy
-  - HA Good comedy
   - HA Good comedy
   ComedyBook: 0
   Good: 0
@@ -3550,7 +3547,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'That sucks man
+  m_Text: 'Man thats sucks
 
 
 '
@@ -3632,9 +3629,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'I lost my Switch
-
-'
+  m_Text: I dropped my icecream
 --- !u!222 &1416865595
 CanvasRenderer:
   m_ObjectHideFlags: 0
