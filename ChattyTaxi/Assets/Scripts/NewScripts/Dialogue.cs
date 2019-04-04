@@ -67,6 +67,18 @@ public class Dialogue : MonoBehaviour
       // Use this for initialization
     void Start()
     {
+       
+        int Savenumber = PlayerPrefs.GetInt("Comedy");
+        if (Savenumber > 0)
+        {
+            ComedyBook = true;
+            Text3.text = ComedyRespond[0];
+
+        }
+        else
+        {
+            ComedyBook = false;
+        }
         myState = States.Question;
         Good = false;
         Bad = false;
@@ -105,10 +117,7 @@ public class Dialogue : MonoBehaviour
 
             BadVoid();
         }
-        if(ComedyBook)
-        {
-            Text3.text = ComedyRespond[0];
-        }
+
     }
     // Checks for a response to the initial question
     void Question()
